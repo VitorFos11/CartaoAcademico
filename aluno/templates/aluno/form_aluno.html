@@ -1,0 +1,138 @@
+{% extends 'aluno/base.html' %}
+
+
+{% block title %}
+
+{{ titulo }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<section class="students">
+
+
+<div class="student-card form-container">
+
+
+
+<h2 class="students-title">
+
+{{ titulo }}
+
+</h2>
+
+
+
+<form method="post">
+
+
+{% csrf_token %}
+
+
+
+<label>
+
+Nome
+
+</label>
+
+
+<input 
+class="form-control"
+type="text"
+name="nome"
+value="{{ aluno.nome|default:'' }}"
+required
+>
+
+
+
+<label>
+
+Curso
+
+</label>
+
+
+
+<input 
+class="form-control"
+type="text"
+name="curso"
+value="{{ aluno.curso|default:'' }}"
+required
+>
+
+
+
+
+<label>
+
+Bio
+
+</label>
+
+
+
+<textarea
+
+class="form-control"
+
+name="bio"
+
+rows="5"
+
+>{{ aluno.bio|default:'' }}</textarea>
+
+
+
+
+<div class="buttons">
+
+
+<button 
+type="submit"
+class="view">
+
+💾 Salvar
+
+</button>
+
+
+
+<a 
+
+href="{% url 'listar_alunos' %}"
+
+class="delete"
+
+style="
+text-decoration:none;
+">
+
+Cancelar
+
+</a>
+
+
+
+</div>
+
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+{% endblock %}

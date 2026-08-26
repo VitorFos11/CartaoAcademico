@@ -1,6 +1,34 @@
 from django.urls import path
-from .views import listar_alunos
+from . import views
+
 
 urlpatterns = [
-    path("", listar_alunos)
+
+    path(
+        "",
+        views.listar_alunos,
+        name="listar_alunos"
+    ),
+
+
+    path(
+        "novo/",
+        views.criar_aluno,
+        name="criar_aluno"
+    ),
+
+
+    path(
+        "<int:pk>/editar/",
+        views.editar_aluno,
+        name="editar_aluno"
+    ),
+
+
+    path(
+        "<int:pk>/excluir/",
+        views.excluir_aluno,
+        name="excluir_aluno"
+    ),
+
 ]

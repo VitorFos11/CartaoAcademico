@@ -1,0 +1,135 @@
+{% extends 'aluno/base.html' %}
+
+
+{% block title %}
+
+Confirmar Exclusão
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<section class="students">
+
+
+<div class="student-card"
+
+style="
+max-width:600px;
+margin:50px auto;
+text-align:center;
+">
+
+
+
+<h2 class="students-title">
+
+⚠️ Confirmar Exclusão
+
+</h2>
+
+
+
+
+<p style="
+font-size:18px;
+margin-bottom:20px;
+">
+
+Você tem certeza que deseja excluir o aluno:
+
+</p>
+
+
+
+<h2>
+
+{{ aluno.nome }}
+
+</h2>
+
+
+
+<p class="course">
+
+{{ aluno.curso }}
+
+</p>
+
+
+
+
+<p class="description">
+
+Esta ação não pode ser desfeita.
+
+</p>
+
+
+
+
+
+<form method="post">
+
+
+{% csrf_token %}
+
+
+
+
+<div class="buttons"
+
+style="
+justify-content:center;
+">
+
+
+
+<button 
+type="submit"
+class="delete">
+
+🗑️ Sim, excluir
+
+</button>
+
+
+
+
+<a
+
+href="{% url 'listar_alunos' %}"
+
+class="view"
+
+style="
+text-decoration:none;
+">
+
+← Cancelar
+
+</a>
+
+
+
+</div>
+
+
+
+</form>
+
+
+
+</div>
+
+
+</section>
+
+
+
+{% endblock %}

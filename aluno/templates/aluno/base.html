@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+{% block title %}
+Cartão Acadêmico
+{% endblock %}
+</title>
+
+
+<link rel="stylesheet" href="{% static 'aluno/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+<h1>
+Cartão Acadêmico
+</h1>
+
+<span>
+Portal de estudantes
+</span>
+
+</div>
+
+
+
+<nav>
+
+<a href="{% url 'listar_alunos' %}">
+Início
+</a>
+
+
+<button class="theme-btn" onclick="toggleTheme()">
+
+🌙 Tema
+
+</button>
+
+
+</nav>
+
+
+</header>
+
+
+{% if messages %}
+
+{% for message in messages %}
+
+<div class="alert">
+
+{{ message }}
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+<footer>
+
+Cartão Acadêmico © 2026
+
+<br>
+
+Sistema desenvolvido em Django
+
+</footer>
+
+
+
+<script>
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark");
+
+
+localStorage.setItem(
+"theme",
+document.body.classList.contains("dark")
+);
+
+
+}
+
+
+
+if(localStorage.getItem("theme") === "true"){
+
+document.body.classList.add("dark");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
