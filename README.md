@@ -4,13 +4,15 @@
 
 O Cartão de Identidade Acadêmica é um sistema desenvolvido em Django que tem como objetivo criar uma representação digital dos alunos em formato de cartão de perfil.
 
-Cada aluno possui informações como:
+O projeto permite cadastrar, visualizar, editar e excluir alunos através de um CRUD completo desenvolvido em Django.
+
+Os alunos possuem informações como:
 
 - Nome
 - Curso
 - Biografia
 
-O projeto permite cadastrar alunos através do painel administrativo do Django e exibir seus cartões acadêmicos em uma interface web.
+Os dados são armazenados em banco SQLite e apresentados em uma interface web moderna no formato de cartões acadêmicos.
 
 ---
 
@@ -29,23 +31,22 @@ O projeto permite cadastrar alunos através do painel administrativo do Django e
 CartaoAcademico
 │
 ├── aluno
-│ ├── migrations
+│ ├── models.py
+│ ├── views.py
+│ ├── urls.py
+│ │
 │ ├── templates
 │ │ └── aluno
-│ │ └── lista.html
-│ ├── admin.py
-│ ├── models.py
-│ ├── urls.py
-│ └── views.py
+│ │ ├── base.html
+│ │ ├── lista.html
+│ │ ├── form_aluno.html
+│ │ └── confirmar_exclusao.html
+│ │
+│ └── static
+│ └── aluno
+│ └── style.css
 │
-├── core
-│ ├── settings.py
-│ ├── urls.py
-│ └── outros arquivos de configuração
-│
-├── db.sqlite3
-├── manage.py
-└── README.md
+└── manage.py
 ---
 
 # Modelo de dados
@@ -143,10 +144,13 @@ http://127.0.0.1:8000/admin/
 # Funcionalidades
 
 - Cadastro de alunos pelo Django Admin
+- Cadastro de alunos pela interface web
+- Edição de alunos
+- Exclusão segura com confirmação
 - Armazenamento dos dados em banco SQLite
 - Listagem dos alunos em cartões digitais
 - Exibição de nome, curso e biografia
-- Interface desenvolvida com HTML e CSS
+- Interface desenvolvida com HTML, CSS e JavaScript
 - Tema escuro
 - Alternância entre tema claro e escuro
 - Animações e efeitos visuais nos cartões
@@ -182,6 +186,19 @@ Objetivo: construir um sistema backend para gerenciamento e apresentação de pe
 
 ---
 
+# Operações CRUD
+
+O sistema implementa as quatro operações principais:
+
+| Operação | Função |
+|---|---|
+| Create | Cadastro de novos alunos |
+| Read | Visualização dos cartões acadêmicos |
+| Update | Edição dos dados dos alunos |
+| Delete | Exclusão de alunos com confirmação |
+
+---
+
 # Autor
 
 Nome: Vitor Faria de Oliveira e Silva 
@@ -195,9 +212,22 @@ Curso: Sistemas de Informação
 
 # Página dos cartões acadêmicos
 
-![Página dos cartões 1](screenshots/alunos_1.png)
+![Página dos cartões 1](screenshots/alunos_1d.png)
 
-![Página dos cartões 2](screenshots/alunos_2.png)
+![Página dos cartões 2](screenshots/alunos_2d.png)
+
+![Página dos cartões 3](screenshots/alunos_3d.png)
+
+![Página dos cartões 4](screenshots/alunos_4d.png)
+
+![Página dos cartões 5](screenshots/alunos_5d.png)
+
+![Página dos cartões 6](screenshots/alunos_6d.png)
+
+![Página dos cartões 7](screenshots/alunos_1b.png)
+
+![Página dos cartões 8](screenshots/alunos_2b.png)
+
 
 Acesse:
 http://127.0.0.1:8000/alunos/
