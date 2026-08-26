@@ -28,25 +28,38 @@ Os dados são armazenados em banco SQLite e apresentados em uma interface web mo
 ---
 
 # Estrutura do projeto
+
+```text
 CartaoAcademico
 │
 ├── aluno
-│ ├── models.py
-│ ├── views.py
-│ ├── urls.py
-│ │
-│ ├── templates
-│ │ └── aluno
-│ │ ├── base.html
-│ │ ├── lista.html
-│ │ ├── form_aluno.html
-│ │ └── confirmar_exclusao.html
-│ │
-│ └── static
-│ └── aluno
-│ └── style.css
+│   │
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   │
+│   ├── templates
+│   │   └── aluno
+│   │       ├── base.html
+│   │       ├── lista.html
+│   │       ├── form_aluno.html
+│   │       └── confirmar_exclusao.html
+│   │
+│   └── static
+│       └── aluno
+│           └── style.css
 │
-└── manage.py
+├── core
+│   ├── settings.py
+│   ├── urls.py
+│   └── outros arquivos de configuração
+│
+├── db.sqlite3
+│
+├── manage.py
+│
+└── README.md
+```
 ---
 
 # Modelo de dados
